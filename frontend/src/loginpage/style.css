@@ -1,0 +1,78 @@
+/* styles.css */
+
+/* Custom styles for the layout */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ensure body fills entire viewport */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.mdc-layout-grid {
+  width: 100%;
+  height: 100%; /* Fill entire viewport */
+  margin: 0 auto;
+}
+
+.mdc-layout-grid__inner {
+  display: flex;
+  height: 100%; /* Fill entire viewport */
+}
+
+.mdc-layout-grid__cell {
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  height: 100%; /* Fill entire viewport */
+  overflow: auto; /* Allow content to scroll within cells */
+}
+
+/* Adjust grid cell spans for different screen sizes */
+@media (max-width: 767px) {
+  .mdc-layout-grid__cell--span-3,
+  .mdc-layout-grid__cell--span-9 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .mdc-layout-grid__cell--span-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .mdc-layout-grid__cell--span-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+/* Styling for SideNav */
+/* You need to add your own styles or use Material Design icons */
+.sidenav {
+  background-color: #f0f0f0;
+}
+
+/* Styling for Content */
+.content {
+  background-color: #ffffff;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .mdc-layout-grid__cell {
+    height: auto; /* Reset height for smaller screens */
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
