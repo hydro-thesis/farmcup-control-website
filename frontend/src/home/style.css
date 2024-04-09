@@ -1,0 +1,43 @@
+/* styles.css */
+
+/* Custom styles for the layout */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ensure body fills entire viewport */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* styles.css */
+
+.home-header {
+  padding-left: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding:0.5rem;
+}
+
+.card {
+  width: calc(25% - 20px); /* Adjust width of each card */
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 0;
+}
