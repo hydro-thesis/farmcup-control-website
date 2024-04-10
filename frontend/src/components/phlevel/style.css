@@ -1,0 +1,84 @@
+body {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure body fills entire viewport */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+
+.mdc-layout-grid {
+    margin: 0;
+}
+
+.mdc-layout-grid__cell--span-2 {
+    background-color: pink;
+    margin: 0;
+}
+
+/* ---------------- CONTENT ------------------- */
+.mdc-layout-grid__cell--span-10 {
+    background-color: rgb(238, 238, 238);
+    height: 100vh;
+    margin: 0;
+}
+
+.navigation-header {
+    border: 1px solid black;
+    margin-bottom: 1.5rem;
+}
+.page-header {
+    border: 1px solid black;
+    margin-top: 0;
+    padding-left: 1rem;
+}
+
+.updated-parameter-container {
+    /* background-color: yellow; */
+    padding-left: 1rem;
+    border: 1px solid black;
+}
+
+.parameter-name-title {
+    font-size: 2rem;
+}
+
+.parameter-name {
+    font-size: 1rem;
+    margin-bottom: .25%;
+}
+
+.paramter-last-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .25%;
+}
+
+.parameter-last-updated {
+    margin: 0%;
+    padding: 0%;
+    font-size: 0.75rem;
+
+}
+
+.mdc-layout-grid__cell--span-6 {
+    margin-top: 2rem;
+    border: 1px solid red;
+}
+
+.parameters {
+    width: 100%;
+    border-collapse: collapse;
+}
+.parameters th, .parameters td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 12px;
+    text-align: left;
+}
+.parameters th {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.54);
+}
+.parameters tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.04);
+}
