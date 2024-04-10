@@ -1,3 +1,36 @@
+<?php
+    session_start();
+
+// Replace these with your actual database credentials
+
+require_once('../../dbconnection/config.php');
+
+// Create a database connection
+$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$user_serial = $_SESSION["user_serial"];
+
+// Fetch user data using the user_id
+$sql = "SELECT * FROM sensordata ORDER BY time_stamp DESC LIMIT 1;";
+$result = $conn->query($sql);
+  while($row = $result->fetch_assoc()) {
+    $moisture = $row["moisture"];
+    $tds = $row["tds"];
+    $pH = $row["pH"];
+    $EC = $row["EC"];
+    $ambient_light = $row["ambient_light"];
+    $temperature = $row["temperature"];
+    $humidity = $row["humidity"];
+    $waterlevel = $row["waterlevel"];
+  }
+
+  $conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,13 +47,12 @@
 
     <body>
         <h1 class="home-header">Farm Cup Dashbaord</h1>
-
         <div>
           <div class="card-container">
             <div class="card">
               <div class="card-content">
                 <h2>Cocopeat Moisture</h2>
-                <p>This is the content of Card 1.</p>
+                <p><?php echo $moisture; ?></p>
               </div>
             </div>
             <!-- Repeat this block for each card -->
@@ -28,49 +60,49 @@
             <div class="card">
               <div class="card-content">
                 <h2>Total Dissolved Solids (TDS)</h2>
-                <p>This is the content of Card 2.</p>
+                <p><?php echo $tds; ?></p>
               </div>
             </div>
 
             <div class="card">
                 <div class="card-content">
                   <h2>pH Level of Water</h2>
-                  <p>This is the content of Card 3.</p>
+                  <p><?php echo $pH; ?></p>
                 </div>
               </div>
 
               <div class="card">
                 <div class="card-content">
                   <h2>Electrical Conductivity</h2>
-                  <p>This is the content of Card 4.</p>
+                  <p><?php echo $EC; ?></p>
                 </div>
               </div>
 
               <div class="card">
                 <div class="card-content">
                   <h2>Ambient Light</h2>
-                  <p>This is the content of Card 5.</p>
+                  <p><?php echo $ambient_light; ?></p>
                 </div>
               </div>
 
               <div class="card">
                 <div class="card-content">
                   <h2>Ambient Temperature</h2>
-                  <p>This is the content of Card 6.</p>
+                  <p><?php echo $temperature; ?></p>
                 </div>
               </div>
 
               <div class="card">
                 <div class="card-content">
                   <h2>Ambient Humidity</h2>
-                  <p>This is the content of Card 7.</p>
+                  <p><?php echo $humidity; ?></p>
                 </div>
               </div>
 
               <div class="card">
                 <div class="card-content">
                   <h2>Water Level</h2>
-                  <p>This is the content of Card 8.</p>
+                  <p><?php echo $waterlevel; ?></p>
                 </div>
               </div>
             <!-- End of repeated block -->

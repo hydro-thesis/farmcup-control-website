@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD:frontend/src/loginpage/default.php
+<html lang="en">
+=======
 <html>
+>>>>>>> deb57914be38bf85d45845d06c7d61b281efa42a:default.php
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +20,61 @@
         <div class="login-container">
             <h1 class="login-header"> Login </h1>
             <div class="login-form">
+<<<<<<< HEAD:frontend/src/loginpage/default.php
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="text-align: center;">
+                <div class="md-text-field">
+                    <label for="username" >Username</label>
+                    <input required="" type="text" id="username" name = "userName" placeholder="Username">
+                </div>
+                <div class="md-text-field">
+                    <label for="password">Password</label>
+                    <input required="" type="password" id="password"  name="passWord" placeholder="Password">
+                </div>
+                <button type="submit" class="md-button">Login</button>
+                </form>
+            </div>
+
+    <?php
+    session_start();
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      // Replace these with your actual database credentials
+      require_once('./dbconnection/config.php');
+  
+      // Create a database connection
+      $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+  
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+  
+      // Get user input
+      $user = $_POST["userName"];
+      $pass = $_POST["passWord"];
+  
+      // Perform user authentication (replace with your actual SQL query)
+      $sql = "SELECT * FROM userdata WHERE username = '$user' AND password = '$pass'";
+      $result = $conn->query($sql);
+  
+      if ($result->num_rows === 1) {
+          // User authentication successful
+          $user = $result->fetch_assoc();
+  
+          header('Location: frontend/home/index.php');
+          
+      } else {
+          // Invalid login credentials
+          $_SESSION["error_message"] = "Invalid username or password.";
+      }
+  
+      $conn->close();
+  }
+  
+    ?>
+        </div>
+=======
                 <div class="md-text-field">
                     <label for="username">Username</label>
                     <input type="text" id="username">
@@ -28,6 +87,7 @@
             </div>
         </div>
     
+>>>>>>> deb57914be38bf85d45845d06c7d61b281efa42a:default.php
         <script src="script.js"></script>
     </body>
 </html>
