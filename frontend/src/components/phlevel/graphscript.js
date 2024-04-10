@@ -1,8 +1,7 @@
-// Sample data (replace with your actual data)
+
 var timeLabels = ["12:00 AM", "01:00 AM", "02:00 AM", "03:00 AM", "04:00 AM", "05:00 AM"];
 var phData = [7.2, 7.0, 6.8, 6.5, 6.7, 7.1]; // pH levels
 
-// Create the chart
 var ctx = document.getElementById('phChart').getContext('2d');
 var phChart = new Chart(ctx, {
     type: 'line',
@@ -12,11 +11,13 @@ var phChart = new Chart(ctx, {
             label: 'pH Level vs. Time',
             data: phData,
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: '#189e23', // Change the color here
+            borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false, 
         scales: {
             y: {
                 ticks: {
