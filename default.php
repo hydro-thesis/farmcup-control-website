@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<<<<<<< HEAD:frontend/src/loginpage/default.php
 <html lang="en">
-=======
 <html>
->>>>>>> deb57914be38bf85d45845d06c7d61b281efa42a:default.php
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +17,6 @@
         <div class="login-container">
             <h1 class="login-header"> Login </h1>
             <div class="login-form">
-<<<<<<< HEAD:frontend/src/loginpage/default.php
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="text-align: center;">
                 <div class="md-text-field">
                     <label for="username" >Username</label>
@@ -73,21 +69,6 @@
   }
   
     ?>
-        </div>
-=======
-                <div class="md-text-field">
-                    <label for="username">Username</label>
-                    <input type="text" id="username">
-                </div>
-                <div class="md-text-field">
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
-                </div>
-                <button class="md-button" onclick="login()">Login</button>
-            </div>
-        </div>
-    
->>>>>>> deb57914be38bf85d45845d06c7d61b281efa42a:default.php
         <script src="script.js"></script>
     </body>
 </html>
