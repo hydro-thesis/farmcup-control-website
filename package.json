@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@material/web": "^1.4.0"
+    "@material/web": "^1.4.0",
+    "bootstrap": "^5.3.3"
   }
 }
