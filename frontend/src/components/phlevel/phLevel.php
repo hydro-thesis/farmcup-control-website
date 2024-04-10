@@ -32,6 +32,11 @@
                 </div> 
 
                 <div class="mdc-layout-grid__inner">
+                    <!---Graph -->
+                    <div class="mdc-layout-grid__cell--span-6">
+                        <canvas id="phChart" width="800" height="400"></canvas>
+                    </div>
+                    <!---Table -->
                     <div class="mdc-layout-grid__cell--span-6">
                         <table class=parameters>
                             <thead>
@@ -47,9 +52,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="mdc-layout-grid__cell--span-6">
-                        <canvas id="phChart" width="800" height="400"></canvas>
-                    </div>
+
                 </div>
                 
                 
